@@ -44,7 +44,7 @@
   padding: 1.5rem 2rem 2rem;
 }
 
-.sidebar footer * {
+.sidebar footer a {
   background: transparent;
   color: var(--green-500);
   border: 1px solid var(--green-500);
