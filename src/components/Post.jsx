@@ -1,17 +1,18 @@
+import { Avatar } from "./Avatar";
+import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
-export function Post() {
+export function Post(props) {
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="http://github.com/Lucas-Pina1.png"
+          <Avatar
+            src={props.author.avatarUrl}
           />
           <div className={styles.authorInfo}>
-            <strong>Lucas Pina</strong>
-            <span>Web Developer</span>
+            <strong>{props.author.name}</strong>
+            <span>{props.author.role}</span>
           </div>
         </div>
 
@@ -21,21 +22,7 @@ export function Post() {
       </header>
 
       <div className={styles.content}>
-        <p>Lorem ipsum dolor sit,</p>
-
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-          nostrum quos, repudiandae nam ducimus aspernatur quam dolores
-          inventore culpa quidem amet a, quo quod? Ipsam eligendi ullam ducimus!
-          Consequatur, incidunt.
-        </p>
-
-        <p>
-          <a href="">teste.dev</a>
-        </p>
-        <p>
-          <a href="">#novoprojeto</a> <a href="">#nlw</a>{" "}
-        </p>
+      
       </div>
 
       <form className={styles.commentForm}>
@@ -47,6 +34,12 @@ export function Post() {
           <button type="submit">Publicar</button>
         </footer>
       </form>
+
+      <div className={styles.commentList}>
+        <Comment/>
+        <Comment/>
+        <Comment/>
+      </div>
     </article>
   );
 }
